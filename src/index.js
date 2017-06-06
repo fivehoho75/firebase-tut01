@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'containers/App';
+import Root from 'containers/Root';
 import registerServiceWorker from 'registerServiceWorker';
 import firebase from 'firebase';
 import firebaseConfig from 'config/firebase';
@@ -10,16 +10,16 @@ import { browserHistory } from 'react-router';
 firebase.initializeApp(firebaseConfig);
 const store = reduxStore();
 const render = (Component) => {
-    ReactDOM.render(<App store={store} history={browserHistory}/>, document.getElementById('root'));
+    ReactDOM.render(<Root store={store} history={browserHistory}/>, document.getElementById('root'));
 }
 
 registerServiceWorker();
 
-render(App);
+render(Root);
 
 if ( module.hot ) {
-    module.hot.accept('containers/App', () => {
-        const NextRoot = require('containers/App').default;
+    module.hot.accept('containers/Root', () => {
+        const NextRoot = require('containers/Root').default;
         render(NextRoot);
     });
 };
