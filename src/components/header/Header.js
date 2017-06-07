@@ -14,6 +14,6 @@ const Header = ({children}) => {
                 <div className="header-space"/>
             </div>
         );
-}
+};
 
 export default Header;
