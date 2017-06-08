@@ -6,6 +6,8 @@
     z-index: $z-index-modal;
 
     .login-modal {
+        @import 'socialloginbutton';
+
         background-color: white;
         width: 30rem;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0, 3px, 6px rgba(0,0,0,0.23);
@@ -47,6 +49,29 @@
                 font-size: 1.2rem;
                 color: $oc-gray-7;
             }
+        }
+
+        .buttons-wrapper {
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
+            padding: 1
+        }
+
+        // 애니메이션 설정
+        &.flipInX, &.flipOutX {
+            -webkit-animation-duration: 0.7s;
+            animation-duration: 0.7s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        // 애니메이션 설정
+        &.zoomIn, &.zoomOut {
+            -webkit-animation-duration: 0.7s;
+            animation-duration: 0.7s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
         }
     }
 }

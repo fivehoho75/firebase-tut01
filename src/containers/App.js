@@ -5,7 +5,7 @@ import * as modal from 'redux/modules/base/modal'
 import Header from 'components/header/Header';
 import Logo from 'components/header/Logo';
 import AuthButton from 'components/header/AuthButton';
-import LoginModal from 'components/LoginModal/LoginModal';
+import LoginModal, { SocialLoginButton } from 'components/LoginModal/LoginModal';
 
 class App extends Component {
 
@@ -32,7 +32,9 @@ class App extends Component {
                     <AuthButton onClick={handleLoginModal.open}/>
                 </Header>
                 <LoginModal visible={modal.getIn(['login', 'open'])} onHide={handleLoginModal.close}>
-
+                    <SocialLoginButton type="github"/>
+                    <SocialLoginButton type="google"/>
+                    <SocialLoginButton type="facebook"/>
                 </LoginModal>
                 {children}
             </div>
